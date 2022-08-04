@@ -10,48 +10,39 @@ function sendMessage(){
 }
 
 
-// function availMessage(){
 
+function formPostRouteLE(){
+    document.querySelector(".booking-request-form").setAttribute("action", "/sendLEBookingRequest")
+}
 
+function formPostRoutePI(){
+    document.querySelector(".booking-request-form").setAttribute("action", "/sendPIBookingRequest")
+}
 
-// 	let dateInput = document.querySelector(".input-date").value
-// 	let timeInput = (document.querySelector(".input-time").value)
-// 	let time = timeInput.substring(0,2)
+function showLiveEventRequestForm(){
 
-// 	if(dateInput === "" || timeInput === ""){
-// 		document.querySelector(".avail-message").innerHTML = "Please enter a time and date"
-        
-// 	}else if (time > 11 && time < 23) {
-// 		document.querySelector(".avail-message").innerHTML = "Daniel is Available!"
+    if(!document.querySelector(".private-instruction-booking-req-progression").classList.contains("hidden")){
+        document.querySelector(".private-instruction-booking-req-progression").classList.add("hidden")
+    }
 
-// 	}else{
-// 		document.querySelector(".avail-message").innerHTML = "Daniel is not available. Please find another time!"
-   
-// 	}
-	
-// 	console.log(dateInput)
-// 	console.log(time)
-// }
+    document.querySelector(".live-event-booking-req-progression").classList.remove("hidden")
 
-// function availMessageKin(){
+    formPostRouteLE()    
+}
 
-// alert('click working')
+function showPrivateInstrctionForm(){
 
-	// let dateInput = document.querySelector(".input-date").value
-	// let timeInput = (document.querySelector(".input-time").value)
-	// let time = timeInput.substring(0,2)
+    if(!document.querySelector(".live-event-booking-req-progression").classList.contains("hidden")){
+        document.querySelector(".live-event-booking-req-progression").classList.add("hidden")
+    }
 
-	// if(dateInput === "" || timeInput === ""){
-	
-    //     document.querySelector(".avail-message-kin").innerHTML = "Please enter a time and date"
-	// }else if (time > 11 && time < 23) {
+    document.querySelector(".private-instruction-booking-req-progression").classList.remove("hidden")
 
-    //     document.querySelector(".avail-message-kin").innerHTML = "KindredSpirit is Available!"
-	// }else{
+    formPostRoutePI()
+}
 
-    //     document.querySelector(".avail-message-kin").innerHTML = "KindredSpirit is not available. Please find another time!"
-	// }
-	
-	// console.log(dateInput)
-	// console.log(time)
+// document.querySelector(".tester").addEventListener("click", tester)
+
+// function tester(){
+//     console.log("I've been clicked")
 // }

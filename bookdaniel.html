@@ -116,7 +116,7 @@
 								<header>
 									<div class="title">
 										<h2><a href="#">Book Daniel Fields</a></h2>
-										<p>Have an event that needs music? Need a gift idea? <br>Want to learn how to sing?</p>
+										<!-- <p>Have an event that needs music? Need a gift idea? <br>Want to learn how to sing?</p> -->
 										
 										
 										
@@ -128,10 +128,56 @@
 								</header>
 
 
+
 								<div id="wrapper">
 										<article class="post">
 											<section>
-												<h2>Booking Request for <%= info[0].fullName %></h2>
+												<h2>Booking Request for Daniel Fields</h2>
+								   
+												<br>
+									
+												<form class="booking-request-form" method="post" action="">
+								   
+												 
+								   
+												   
+												   <div class="row gtr-uniform"> 
+								   
+													   <p>What type of request are you making?</p>
+								   
+													   <div class="col-4 col-12-small">
+														   <input value="Live Event" type="radio" id="live-event-request" name="typeOfRequest" onChange="showLiveEventRequestForm()">
+														   <label for="live-event-request">Live Event</label>
+													   </div>
+													   <div class="col-4 col-12-small">
+														   <input value="Private Instruction" type="radio" id="private-instruction-request" name="typeOfRequest" onChange="showPrivateInstrctionForm()">
+														   <label for="private-instruction-request">Private Instruction</label>
+													   </div>
+														   
+												   </div>
+								   
+								   
+										   <!-- If Request is a Live Event Booking Request -->
+												   <div class="live-event-booking-req-progression hidden">
+								   
+													<p><b>Daniel only books live events through KindredSpirit. If you'd like Daniel at a live event, head over and book <a href="/bookkindred.html">KindredSpirit!</a></b></p>
+													
+													</div>
+
+										  <!-- If Request is a Live Event Booking Request -->
+										  <div class="private-instruction-booking-req-progression hidden">
+								   
+											<h3>Sorry, Daniel is not accepting booking requests at this time</h3>
+											
+										</div>
+
+								
+
+
+								<!-- <div id="wrapper">
+										<article class="post">
+											<section>
+												<h2>Booking Request for Daniel Fields</h2>
 								   
 												<br>
 									
@@ -175,7 +221,7 @@
 												   </div>
 								   
 								   
-										   <!-- If Request is a Live Event Booking Request -->
+										   If Request is a Live Event Booking Request
 												   <div class="live-event-booking-req-progression hidden">
 								   
 													<div class="row gtr-uniform">
@@ -287,19 +333,12 @@
 														   <input value="other" type="checkbox" id="eventType-other" name="eventType" >
 														   <label for="eventType-other">Other</label>
 													   </div>
-													   <!-- <div class="col-6 col-12-small">
-														   <input value="private" type="checkbox" id="private" name="pubOrPriv" >
-														   <label for="private">Wedding</label>
-													   </div>
-													   <div class="col-6 col-12-small">
-														   <input value="private" type="checkbox" id="private" name="pubOrPriv" >
-														   <label for="private">Wedding</label>
-													   </div> -->
+													 
 													</div>
 								   
 													<br>
 								   
-													<p><%= info[0].firstName %>'s performance' will be:</p>
+													<p>Daniel's performance' will be:</p>
 													<div class="row gtr-uniform"> 
 													  
 														<div class="col-6 col-12-small">
@@ -333,7 +372,7 @@
 												   <br>
 								   
 												   <div class="row gtr-uniform"> 
-													   <p> <%= info[0].fullName %> requires {x} outlets to perform. Is there a place to plug in electrical equipment that needs {x} outlets?</p>
+													   <p> Daniel requires outlets to perform. Is there a place to plug in electrical equipment that needs outlets?</p>
 								   
 													   <div class="col-4 col-12-small">
 														   <input value="yes" type="radio" id="outlets-for-equip-yes" name="outletsForEquip">
@@ -348,7 +387,7 @@
 												   <br>
 								   
 													<div class="row gtr-uniform">
-													   <p>Tell <%= info[0].firstName %> a little bit about the event.</p>
+													   <p>Tell Daniel a little bit about the event.</p>
 														<div class="col-6 col-12-xsmall">
 															<input type="text" name="eventDescription" id="event-description" value="" placeholder="Describe Event" />
 														</div>
@@ -359,7 +398,7 @@
 														<input type="submit"></input>
 													</div>
 								   
-											   <!-- If request is a private instruction booking request-->
+											   If request is a private instruction booking request
 												   <div class="private-instruction-booking-req-progression hidden">
 								   
 													   <div class="row gtr-uniform"> 
@@ -368,7 +407,8 @@
 									   
 														   <div class="col-4 col-12-small">
 															   <input value="<%= info[0].bookings[1].instrument %>" type="radio" id="private-instruction-request-instrument" name="privInstrucInstrument" onChange="showPrivateInstrctionForm">
-															   <label for="private-instruction-request-instrument"><%= info[0].bookings[1].instrument %></label>
+															   <label for="private-instruction-request-instrument">Voice</label>
+															   
 														   </div>
 														 
 													   </div>
@@ -411,7 +451,7 @@
 									
 												</form>
 											</section>
-										</article>
+										</article> -->
 
 
 
@@ -427,13 +467,7 @@
 								<p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
 								<p>Nunc quis dui scelerisque, scelerisque urna ut, dapibus orci. Sed vitae condimentum lectus, ut imperdiet quam. Maecenas in justo ut nulla aliquam sodales vel at ligula. Sed blandit diam odio, sed fringilla lectus molestie sit amet. Praesent eu tortor viverra lorem mattis pulvinar feugiat in turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce ullamcorper tellus sit amet mattis dignissim. Phasellus ut metus ligula. Curabitur nec leo turpis. Ut gravida purus quis erat pretium, sed pellentesque massa elementum. Fusce vestibulum porta augue, at mattis justo. Integer sed sapien fringilla, dapibus risus id, faucibus ante. Pellentesque mattis nunc sit amet tortor pellentesque, non placerat neque viverra. </p> -->
 								
-								<footer>
-									<ul class="stats">
-										<li><a href="#">General</a></li>
-										<li><a href="#" class="icon solid fa-heart">28</a></li>
-										<li><a href="#" class="icon solid fa-comment">128</a></li>
-									</ul>
-								</footer>
+								
 							</article>
 
 					</div>

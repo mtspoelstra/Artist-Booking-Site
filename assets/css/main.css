@@ -3742,3 +3742,15 @@ iframe {
 			}
 
 		}
+
+
+		/* 
+		My edits */
+
+		#bookingType, #bookingType2 {
+			width: 45%
+		}
+
+		.hidden {
+			display: none;
+		}

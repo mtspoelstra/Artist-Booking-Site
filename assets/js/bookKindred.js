@@ -20,3 +20,13 @@ function availMessage(){
 function noBookingsMessage(){
     document.querySelector(".no-booking-message").innerHTML = "I'm sorry, KindredSpirit is not accepting booking requests at this time"
 }
+
+
+function showLiveEventRequestForm2(){
+
+    
+
+    document.querySelector(".live-event-booking-req-progression-2").classList.remove("hidden")
+
+        
+}
