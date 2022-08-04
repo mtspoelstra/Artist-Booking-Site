@@ -127,141 +127,299 @@
 									</div>
 								</header>
 
-								<header>
+
+								<div id="wrapper">
+										<article class="post">
+											<section>
+												<h2>Booking Request for <%= info[0].fullName %></h2>
+								   
+												<br>
 									
-									<div class="title">
-										<h2><a href="single.html">Select Booking Type</a></h2>
-										<section>
-											<form action="">
-												<ul class="posts">
-
-													<input type="checkbox">
-												
-													<li>
-														<article>
-															<header>
-																
-																<h3><a href="single.html">Private Instruction</a></h3>
-																<time class="published" datetime="2015-10-20">Voice</time>
-																<time class="published" datetime="2015-10-20">$55/hr</time>
-															</header>
-															<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
-														</article>
-													</li>
-													<li>
-														<article>
-															<header>
-																<h3><a href="single.html">Live Events</a></h3>
-																<time class="published" datetime="2015-10-15">Books through <a href="/bookkindred.html">KindredSpirit</a>
-															</header>
-															<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
-														</article>
-													</li>
-											
-												</ul>
-
-											</form>
-				
-										</section>
-									</div>
+												<form class="booking-request-form" method="post" action="">
+								   
+												   <div class="hidden row gtr-uniform">
+													   <p>Artist Name</p>
+													   <div class="col-6 col-12-xsmall">
+														   <input type="text" name="toArtistName" id="artist-name" value="<%= info[0].fullName %>" placeholder="" />
+													   </div>
+												   </div>
+								   
+												   <div class="hidden row gtr-uniform">
+													   <p>From User Name</p>
+													   <div class="col-6 col-12-xsmall">
+														   <input type="text" name="fromUserName" id="from-user-name" value="Willy Buck" placeholder="" />
+													   </div>
+												   </div>
+								   
+												   <div class="hidden row gtr-uniform">
+													   <p>Request Status</p>
+													   <div class="col-6 col-12-xsmall">
+														   <input type="text" name="requestStatus" id="request-status" value="pending" placeholder="" />
+													   </div>
+												   </div>
+								   
+												   
+												   <div class="row gtr-uniform"> 
+								   
+													   <p>What type of request are you making?</p>
+								   
+													   <div class="col-4 col-12-small">
+														   <input value="Live Event" type="radio" id="live-event-request" name="typeOfRequest" onChange="showLiveEventRequestForm()">
+														   <label for="live-event-request">Live Event</label>
+													   </div>
+													   <div class="col-4 col-12-small">
+														   <input value="Private Instruction" type="radio" id="private-instruction-request" name="typeOfRequest" onChange="showPrivateInstrctionForm()">
+														   <label for="private-instruction-request">Private Instruction</label>
+													   </div>
+														   
+												   </div>
+								   
+								   
+										   <!-- If Request is a Live Event Booking Request -->
+												   <div class="live-event-booking-req-progression hidden">
+								   
+													<div class="row gtr-uniform">
+													   <p>Select date and time for booking</p>
+														<div class="col-6 col-12-xsmall">
+														  
+														   <input class="input-date" id="booking-date" type="date" name="date"/>
+														   <input class="input-time" id="booking-time"type="time" name="time">
+														</div>
+													
+													</div>
 									
-
-									<div class="title">
-										<h2><a href="single.html">Select Date and Time</a></h2>
-										
-										<div>
-											<input class="input-date" type="date" required/>
-											<input class="input-time" type="time" required>
-
-											<br>
-											<br>
-
-											<ul class="actions">
-												<li class="check-avail"><button class="button small" type="submit">Check Availablility</button></li>
-											</ul>
-										</div>
+									
+								   
+													<div class="row gtr-uniform">
+													   <p>Event Location</p>
+													   <div class="col-6 col-12-xsmall">
+														   <input type="text" name="location" id="location" value="" placeholder="555 Music Lane, Syracuse, NY 33333" />
+													   </div>
+												   </div>
+													
+												   <br>
+								   
+												   <p>Venue Type:</p>
+												   <div class="row gtr-uniform"> 
+													 
+													   <div class="col-6 col-12-small">
+														   <input value="home" type="checkbox" id="venue-type-home" name="venueType">
+														   <label for="venue-type-home">Home</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="bar" type="checkbox" id="venue-type-bar" name="venueType" >
+														   <label for="venue-type-bar">Bar</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														  <input value="restaurant" type="checkbox" id="venue-type-restaurant" name="venueType" >
+														  <label for="venue-type-restaurant">Restaurant</label>
+													  </div>
+													   <div class="col-6 col-12-small">
+														  <input value="restaurant" type="checkbox" id="venue-type-restaurant" name="venueType" >
+														  <label for="venue-type-restaurant">Park</label>
+													  </div>
+													   <div class="col-6 col-12-small">
+														  <input value="corporate" type="checkbox" id="venue-type-corporate" name="venueType" >
+														  <label for="venue-type-corporate">Corporate</label>
+													  </div>
+													   <div class="col-6 col-12-small">
+														  <input value="other" type="checkbox" id="venue-type-other" name="venueType" >
+														  <label for="venue-type-other">Other</label>
+													  </div>
+												   </div>
+								   
+												   <br>
+												   <br>
+								   
+												   <div class="row gtr-uniform">
+													   <p>Company or Venue name if applicable:</p>
+													   <div class="col-6 col-12-xsmall">
+														   <input type="text" name="venueName" id="venue-name" value="" placeholder="Name" />
+													   </div>
+												   </div>
+												   
+												   <br>
+								   
+												   <div class="row gtr-uniform"> 
+								   
+													   <p>This event is:</p>
+								   
+													   <div class="col-4 col-12-small">
+														   <input value="public" type="radio" id="public" name="pubOrPriv">
+														   <label for="public">Public</label>
+													   </div>
+													   <div class="col-4 col-12-small">
+														   <input value="private" type="radio" id="private" name="pubOrPriv">
+														   <label for="private">Private</label>
+													   </div>
+														   
+												   </div>
+								   
+													
+												   <p>Type of event:</p>
+													<div class="row gtr-uniform"> 
+													  
+														<div class="col-6 col-12-small">
+															<input value="birthday" type="checkbox" id="eventType-birthday" name="eventType">
+															<label for="eventType-birthday">Birthday</label>
+														</div>
+														<div class="col-6 col-12-small">
+															<input value="wedding" type="checkbox" id="eventType-wedding" name="eventType" >
+															<label for="eventType-wedding">Wedding</label>
+														</div>
+														<div class="col-6 col-12-small">
+														   <input value="anniversary" type="checkbox" id="eventType-anniversary" name="eventType" >
+														   <label for="eventType-anniversary">Anniversary</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="holiday" type="checkbox" id="eventType-holiday" name="eventType" >
+														   <label for="eventType-holiday">Holiday</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="venue" type="checkbox" id="eventType-venue" name="eventType" >
+														   <label for="eventType-venue">Venue Entertainment</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="corporate" type="checkbox" id="eventType-corporate" name="eventType" >
+														   <label for="eventType-corporate">Corporate</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="other" type="checkbox" id="eventType-other" name="eventType" >
+														   <label for="eventType-other">Other</label>
+													   </div>
+													   <!-- <div class="col-6 col-12-small">
+														   <input value="private" type="checkbox" id="private" name="pubOrPriv" >
+														   <label for="private">Wedding</label>
+													   </div>
+													   <div class="col-6 col-12-small">
+														   <input value="private" type="checkbox" id="private" name="pubOrPriv" >
+														   <label for="private">Wedding</label>
+													   </div> -->
+													</div>
+								   
+													<br>
+								   
+													<p><%= info[0].firstName %>'s performance' will be:</p>
+													<div class="row gtr-uniform"> 
+													  
+														<div class="col-6 col-12-small">
+															<input value="background music" type="checkbox" id="artist-as-background-music" name="artistAs">
+															<label for="artist-as-background-music">Background Music</label>
+														</div>
+														<div class="col-6 col-12-small">
+															<input value="main event" type="checkbox" id="artist-as-main-event" name="artistAs" >
+															<label for="artist-as-main-event">Main Event</label>
+														</div>
+														<div class="col-6 col-12-small">
+														   <input value="other" type="checkbox" id="artist-as-other" name="artistAs" >
+														   <label for="artist-as-other">Other</label>
+													   </div>
+													</div>
+													
+													<br>
+								   
+													<p>Do you know where the musician(s) will set up to perform?</p>
+													<div class="row gtr-uniform"> 
+													   <div class="col-4 col-12-small">
+														   <input value="yes" type="radio" id="know-where-perform-yes" name="knowWherePerform">
+														   <label for="know-where-perform-yes">Yes</label>
+													   </div>
+													   <div class="col-4 col-12-small">
+														   <input value="no" type="radio" id="know-where-perform-no" name="knowWherePerform">
+														   <label for="know-where-perform-no">No</label>
+													   </div>   
+												   </div>
+								   
+												   <br>
+								   
+												   <div class="row gtr-uniform"> 
+													   <p> <%= info[0].fullName %> requires {x} outlets to perform. Is there a place to plug in electrical equipment that needs {x} outlets?</p>
+								   
+													   <div class="col-4 col-12-small">
+														   <input value="yes" type="radio" id="outlets-for-equip-yes" name="outletsForEquip">
+														   <label for="outlets-for-equip-yes">Yes</label>
+													   </div>
+													   <div class="col-4 col-12-small">
+														   <input value="no" type="radio" id="outlets-for-equip-no" name="outletsForEquip">
+														   <label for="outlets-for-equip-no">No</label>
+													   </div> 
+												   </div>
+								   
+												   <br>
+								   
+													<div class="row gtr-uniform">
+													   <p>Tell <%= info[0].firstName %> a little bit about the event.</p>
+														<div class="col-6 col-12-xsmall">
+															<input type="text" name="eventDescription" id="event-description" value="" placeholder="Describe Event" />
+														</div>
+													</div>
+								   
+												  
+									
+														<input type="submit"></input>
+													</div>
+								   
+											   <!-- If request is a private instruction booking request-->
+												   <div class="private-instruction-booking-req-progression hidden">
+								   
+													   <div class="row gtr-uniform"> 
+								   
+														   <p>What instrument are you booking private instruction for?</p>
+									   
+														   <div class="col-4 col-12-small">
+															   <input value="<%= info[0].bookings[1].instrument %>" type="radio" id="private-instruction-request-instrument" name="privInstrucInstrument" onChange="showPrivateInstrctionForm">
+															   <label for="private-instruction-request-instrument"><%= info[0].bookings[1].instrument %></label>
+														   </div>
+														 
+													   </div>
+								   
+													   
+													   <div class="row gtr-uniform"> 
+								   
+														   <p>What session length are you booking?</p>
+									   
+														   <div class="col-4 col-12-small">
+															   <input value="30 min" type="radio" id="session-length-30min" name="sessionLength">
+															   <label for="session-length-30min">30 min</label>
+														   </div>
+								   
+														   <div class="col-4 col-12-small">
+															   <input value="60 min" type="radio" id="session-length-60min" name="sessionLength" onChange="">
+															   <label for="session-length-60min">60 min</label>
+														   </div>
+														 
+													   </div>
+								   
+													   <div class="row gtr-uniform">
+														  <p>Select date and time for booking</p>
+														   <div class="col-6 col-12-xsmall">
+															 
+															  <input class="input-date" id="booking-date-priv" type="date" name="datePrivInstruc"/>
+															  <input class="input-time" id="booking-time-priv" type="time" name="timePrivInstruc">
+														   </div>
+													   </div>
+								   
+										   
+								   
+													   <input type="submit"></input>
+													   </div>
+								   
+												   </div>
+												   
+											 
 									
 									
-										<br>
-										
-										<p class="avail-message"></p>
-										<!-- <ul class="actions">
-											<li><a href="single.html" class="button large">Book Now</a></li>
-										</ul> -->
-									</div>
-								
-							</header>
+												</form>
+											</section>
+										</article>
 
 
-							<header>
-									
-								<div class="title">
-									<h2><a href="single.html">Fill in some details about your event</a></h2>
-									<section>
-										<form action="">
-											<ul class="posts">
 
-												<input type="checkbox">
-											
-												<li>
-													<article>
-														<header>
-															
-															<h3><a href="single.html">Private Instruction</a></h3>
-															<time class="published" datetime="2015-10-20">Voice</time>
-															<time class="published" datetime="2015-10-20">$55/hr</time>
-														</header>
-														<a href="single.html" class="image"><img src="images/pic08.jpg" alt="" /></a>
-													</article>
-												</li>
-												<li>
-													<article>
-														<header>
-															<h3><a href="single.html">Live Events</a></h3>
-															<time class="published" datetime="2015-10-15">Books through <a href="/bookkindred.html">KindredSpirit</a>
-														</header>
-														<a href="single.html" class="image"><img src="images/pic09.jpg" alt="" /></a>
-													</article>
-												</li>
-										
-											</ul>
 
-										</form>
-			
-									</section>
-								</div>
-
-							</header>
-
-							<header>
-
-								<div class="title">
-									<h2><a href="single.html">Tell me a little about your event</a></h2>
-									
-									<div>
-										<textarea rows="4" cols="50"></textarea>
-									
-
-										<br>
-										<br>
-
-										
-									</div>
-								
-								
-									<br>
-									
-									<p class="no-booking-message"></p>
-									<ul class="actions">
-										<li><a class="button large send-request">Send Booking Request</a></li>
-									</ul>
-
-								
-								</div>
 
 								
 							
-						</header>
+								
 
 
 
