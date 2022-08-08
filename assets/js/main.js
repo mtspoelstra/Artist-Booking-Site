@@ -95,11 +95,11 @@
 })(jQuery);
 
 document.querySelector(".check-avail").addEventListener("click", message)
+document.querySelector(".continue-btn").addEventListener("click", extendBio)
+
 
 
 function message(){
-
-
 
 	let dateInput = document.querySelector(".input-date").value
 	let timeInput = (document.querySelector(".input-time").value)
@@ -117,3 +117,13 @@ function message(){
 	console.log(time)
 }
 
+function extendBio(){
+	document.querySelector(".additional-bio").classList.toggle("hidden")
+	
+	if(document.querySelector(".additional-bio").classList.contains("hidden")){
+		document.querySelector(".continue-btn").innerHTML = "Continue Reading"
+	}else{
+		document.querySelector(".continue-btn").innerHTML = "View Less"
+	}
+	
+}
